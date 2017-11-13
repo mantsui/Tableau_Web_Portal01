@@ -45,9 +45,28 @@
 
 				
 	<!-- slide -->
-				<section  data-menu-title="Medicare Inpatient Charge Analysis 01"> 
+	<section  data-menu-title="Medicare Inpatient Charge Analysis 01"> 
+	<script type="text/javascript">
+        var vizMedicareIPChrg01;
+        
+        function initViz() {
+            var containerDiv = document.getElementById("vizContainer"),
+                url = "https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard",
+                options = {
+      		   	width: '1200px',
+    			height: '660px',
+    			hideToolbar: true,
+    			hideTabs: true
+                };
+            
+            vizMedicareIPChrg01 = new tableau.Viz(containerDiv, url, options);
+        }
+        
+    	</script>
+		
+		
 					<div id='MedicareIPChargeViz01'></div>
-				</section>
+	</section>
 
 	<!-- slide -->
 				<section  data-menu-title="Medicare Inpatient Charge Analysis 01"> 

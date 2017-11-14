@@ -1,5 +1,5 @@
 // Initialize the viz variable 
-var vizAOIExec, vizAOIDept, vizAOIFacility, vizAOI_UC_Facility;
+var vizMedicareIP01, vizMedicareOP01, vizAOIFacility, vizAOI_UC_Facility;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
@@ -13,7 +13,7 @@ window.onload= function() {
     	hideTabs: true
     };
 
-	vizAOIExec = new tableau.Viz(placeholder, vizURL, options);
+	vizMedicareIP01 = new tableau.Viz(placeholder, vizURL, options);
 
 	
     var placeholder = document.getElementById('myActionOIDeptViz');
@@ -25,7 +25,7 @@ window.onload= function() {
     	hideTabs: true
     };
 
-	vizAOIDept = new tableau.Viz(placeholder, vizURL, options);
+	vizMedicareOP01 = new tableau.Viz(placeholder, vizURL, options);
 
 	
     var placeholder = document.getElementById('myActionOIFacilityViz');
@@ -52,13 +52,10 @@ window.onload= function() {
 	vizAOI_UC_Facility = new tableau.Viz(placeholder, vizURL, options);
 };
 
-// Switch the viz to the sheet specified
-// function switchView(sheetName) {
-	// var workbook = vizActionOIExec.getWorkbook();
-	// workbook.activateSheetAsync(sheetName);
-// }
+
+
 function switchView(sheetName) {
-	var workbook = vizActionOIDept.getWorkbook();
+	var workbook = vizMedicareOP01.getWorkbook();
 	workbook.activateSheetAsync(sheetName);
 }
 
@@ -68,12 +65,12 @@ function switchView(sheetName) {
 
 // Filter the specified dimension to the specified value(s)
 function show(filterName, values) {
-	var sheet = vizActionOIDept.getWorkbook().getActiveSheet();
+	var sheet = vizMedicareOP01.getWorkbook().getActiveSheet();
 	sheet.applyFilterAsync(filterName, values, tableau.FilterUpdateType.REPLACE);
 }
 
 // Select the marks that have the specified value(s) for the specified dimension
 function selectMarks(filterName, values) {
-	var sheet = vizActionOIDept.getWorkbook().getActiveSheet();
+	var sheet = vizMedicareOP01.getWorkbook().getActiveSheet();
 	sheet.selectMarksAsync(filterName, values, tableau.FilterUpdateType.REPLACE);
 }

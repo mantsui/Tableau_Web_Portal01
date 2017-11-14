@@ -15,7 +15,7 @@ var RevealMenu = window.RevealMenu || (function(){
 	loadResource(options.path + '/menu.css', 'stylesheet', function() {
 	loadResource(options.path + '/font-awesome-4.3.0/css/font-awesome.min.css', 'stylesheet', function() {
 		// does not support IE8 or below
-		if (!head.browser.ie || head.browser.version >= 9) {
+		//if (!head.browser.ie || head.browser.version >= 9) {  Comment out by Man Tsui
 			//
 			// Set option defaults
 			//
@@ -45,10 +45,10 @@ var RevealMenu = window.RevealMenu || (function(){
 			}
 			var transitions = options.transitions;
 			if (typeof transitions === "undefined") transitions = true;
-			if (head.browser.ie && head.browser.version <= 9) {
+		//	if (head.browser.ie && head.browser.version <= 9) {   Comment out by Man Tsui
 				// transitions aren't support in IE9 anyway, so no point in showing them
-				transitions = false;
-			}
+		//		transitions = false;    Comment out by Man Tsui
+		//	}     Comment out by Man Tsui
 			var openButton = options.openButton;
 			if (typeof openButton === "undefined") openButton = true;
 			var openSlideNumber = options.openSlideNumber;
@@ -769,7 +769,7 @@ var RevealMenu = window.RevealMenu || (function(){
 			}
 
 			dispatchEvent('menu-ready');
-		}
+	//	} Comment out by Man Tsui
 	})
 	});
 

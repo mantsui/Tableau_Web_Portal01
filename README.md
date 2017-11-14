@@ -1,2 +1,3 @@
-Clone repository from https://github.com/annaken/intro_to_git_course
-Anna Kennedy
+A Demonstration using Tableau with reveal.js
+
+reveal.js created by Hakim El Hattab

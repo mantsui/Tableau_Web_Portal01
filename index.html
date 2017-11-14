@@ -20,12 +20,36 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
+		<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+		
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>Slide 1</section>
 				<section>Slide 2</section>
+				
+				<section>
+					<script type="text/javascript">
+					var vizMedicareIPChrg01;
+						
+					function initViz() {
+						var containerDiv = document.getElementById("vizContainer"),
+						url = "https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard",
+						options = {
+							width: '1200px',
+							height: '660px',
+							hideToolbar: true,
+							hideTabs: true
+						};
+					vizMedicareIPChrg01 = new tableau.Viz(containerDiv, url, options);
+					}
+						
+					</script>	
+					<div id='MedicareIPChargeViz01'></div>
+				</section>
+				
 			</div>
 		</div>
 

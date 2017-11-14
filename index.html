@@ -1,222 +1,49 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
-
-    <!-- Metadata to edit -->
-		<title> Reveal.js on Github and Tableau </title>
-		<meta name="author" content="Blackapple">
-    <!-- /Metadata to edit -->
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<title>reveal.js</title>
 
-		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<!-- Printing and PDF exports -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-
-		<!-- Access the API & Load your JavaScript -->
-		<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-		
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
 	</head>
-
 	<body>
-
 		<div class="reveal">
 			<div class="slides">
-
-				
-	<!-- slide -->
-	<section  data-menu-title="Medicare Inpatient Charge Analysis 01"> 
-	<script type="text/javascript">
-        var vizMedicareIPChrg01;
-        
-        function initViz() {
-            var containerDiv = document.getElementById("vizContainer"),
-                url = "https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard",
-                options = {
-      		   	width: '1200px',
-    			height: '660px',
-    			hideToolbar: true,
-    			hideTabs: true
-                };
-            
-            vizMedicareIPChrg01 = new tableau.Viz(containerDiv, url, options);
-        }
-        
-    	</script>
-		
-		
-					<div id='MedicareIPChargeViz01'></div>
-	</section>
-
-
-	<!-- slide -->
-				<section  data-menu-title="Sacramento Police Dispatch Dashboard"> 
-					<div id='mySacPoliceDispatch'></div>
-				</section>
-
-				
-				
-				
-	<!-- slide -->
-				<section  data-menu-title="Medicare OP ChargeViz01"> 
-					<<iframe data-src="https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard?:showVizHome=no&:embed=true&:tabs=no&:toolbar=no" width="1200" height="660" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-				
-        <!-- Title slide -->
-				<section>
-					<h1>Reveal.js + Github + Tableau</h1>
-					<p>
-						<small>Blackapple</small>
-					</p>
-					<aside class="notes">
-            Some notes here
-					</aside>
-				</section>
-
-
-<!-- Overview -->
-				<section>
-					<h1>Overview</h1>
-					<p class="fragment"><ul>
-							<li>Version control</li>
-							<li>Git concepts</li>
-							<li>Using git locally</li>
-							<li>Using git with a (Gitlab) remote</li>
-							<li>Undoing mistakes</li>
-							<li>Branches</li>
-							<li>Caring for your commit history</li>
-					</ul></p>
-					<aside class="notes">
-					</aside>
-				</section>
-
-
-<!-- Version control -->
-				<section>
-					<h1>Version control</h1>
-					<p class="fragment"><ul>
-							<li><b>Version control</b> means that we keep a history of all the changes made in a set of documents.</li>
-							<li>Git is one example of a <b>version control</b> system<br/></li><br/>
-							<li>Pre-version control:
-                <ul>
-							    <li>Copy file1 to file1.bak</li>
-                </ul>
-              </li>	
-							<li>CVS / SVN:
-                <ul>
-							    <li>Centralised storage with revision history</li>
-                </ul>
-              </li>	
-							<li>Git:
-                <ul>
-							    <li>Distributed system</li>
-                </ul>
-              </li>	
-					</ul></p>
-				</section>
-
-				<section>
-					<h2>SVN</h2>
-          <p>Centralised storage with revision history</p>
-					<p class="fragment"><ul>
-              <li>client-server model</li>
-              <li>central server houses master repo</li>
-              <li>developer laptop is the client</li>
-              <li>check-out -> modify -> check-in</li><br/>
-              <li>Advantages / disadvantages</li>
-              <li>+ simple system</li>
-              <li>- difficult to work offline</li>
-              <li>- difficult to work collaboratively</li>
-              <li>- advanced functionality quite hard to get right</li>
-					</ul></p>
-				</section>
-
-				<section>
-					<h2>Git</h2>
-          <p>Distributed version control</p>
-					<p class="fragment"><ul>
-							<li>every copy of the project is a full repository</li><br/>
-              <li>Advantages / disadvantages</li>
-							<li>- steep learning curve</li>
-							<li>+ save changes locally when working offline</li>
-							<li>+ branching</li>
-							<li>+ merging</li>
-							<li>+ every copy is a full backup</li>
-							<li>+ very fast</li>
-					</ul></p>
-				</section>
+				<section>Slide 1</section>
+				<section>Slide 2</section>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// The "normal" size of the presentation, aspect ratio will be preserved
-				// when the presentation is scaled to fit different resolutions. Can be
-				// specified using percentage units.
-				width: 1200,
-				height: 660,
-				
-				width: '100%',
-    				height: '100%',
-
-				// Factor of the display size that should remain empty around the content
-				margin: 0.1,
-
-				// Bounds for smallest/largest possible scale to apply to content
-				minScale: 0.2,
-				maxScale: 1.5,
-							
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-
 		</script>
-
 	</body>
 </html>
-

@@ -1,14 +1,14 @@
 // Initialize the viz variable 
-var vizMedicareIP01, vizMedicareOP01, vizAOIFacility, vizAOI_UC_Facility;
+var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
 
-    var placeholder = document.getElementById('myActionOIExecViz');
-    var vizURL = 'https://tabltest.ucdmc.ucdavis.edu/views/UCDHealthActionOIDashboard/ActionOIExecutiveDashboard';
+    var placeholder = document.getElementById('myMedicareIP01Viz');
+    var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
     var options = {
-    	width: '1368px',
-    	height: '800px',
+    	width: '1200px',
+    	height: '660px',
     	hideToolbar: true,
     	hideTabs: true
     };
@@ -16,11 +16,11 @@ window.onload= function() {
 	vizMedicareIP01 = new tableau.Viz(placeholder, vizURL, options);
 
 	
-    var placeholder = document.getElementById('myActionOIDeptViz');
-    var vizURL = 'https://tabltest.ucdmc.ucdavis.edu/views/UCDHealthActionOIDashboard/ActionOIDeptDashboard1';
+    var placeholder = document.getElementById('myMedicareOP01Viz');
+    var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
     var options = {
-    	width: '1368px',
-    	height: '800px',
+    	width: '1200px',
+    	height: '660px',
     	hideToolbar: true,
     	hideTabs: true
     };
@@ -28,28 +28,17 @@ window.onload= function() {
 	vizMedicareOP01 = new tableau.Viz(placeholder, vizURL, options);
 
 	
-    var placeholder = document.getElementById('myActionOIFacilityViz');
-    var vizURL = 'https://tabltest.ucdmc.ucdavis.edu/views/ActionOIFacilityTrendDashboards/FacilityTrendDashboardbyCity';
+    var placeholder = document.getElementById('mySacPoliceDispatchViz');
+    var vizURL = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
     var options = {
-    	width: '1368px',
-    	height: '800px',
+    	width: '1200px',
+    	height: '660px',
     	hideToolbar: true,
     	hideTabs: true
     };
 
-	vizAOIFacility = new tableau.Viz(placeholder, vizURL, options);
+	vizSacPoliceDispatch = new tableau.Viz(placeholder, vizURL, options);
 
-	
-    var placeholder = document.getElementById('myActionOI_UC_Fac_Viz');
-    var vizURL = 'https://tabltest.ucdmc.ucdavis.edu/views/ActionOIFacilityTrendDashboards/UCTrendDashboard';
-    var options = {
-    	width: '1368px',
-    	height: '800px',
-    	hideToolbar: true,
-    	hideTabs: true
-    };
-
-	vizAOI_UC_Facility = new tableau.Viz(placeholder, vizURL, options);
 };
 
 

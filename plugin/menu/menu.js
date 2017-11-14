@@ -289,7 +289,7 @@ var RevealMenu = window.RevealMenu || (function(){
 					
 				    // identify active theme
 				    selectAll('div[data-panel="Themes"] li').forEach(function(i) { i.classList.remove('active') });
-				    select('li[data-theme="' + select('#theme').getAttribute('href') + '"]').classList.add('active');
+	//			    select('li[data-theme="' + select('#theme').getAttribute('href') + '"]').classList.add('active'); Comment out by Man Tsui
 
 				    // identify active transition
 				    selectAll('div[data-panel="Transitions"] li').forEach(function(i) { i.classList.remove('active') });

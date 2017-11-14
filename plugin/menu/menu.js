@@ -45,10 +45,10 @@ var RevealMenu = window.RevealMenu || (function(){
 			}
 			var transitions = options.transitions;
 			if (typeof transitions === "undefined") transitions = true;
-			if (head.browser.ie && head.browser.version <= 9) {
-				// transitions aren't support in IE9 anyway, so no point in showing them
-				transitions = false;
-			}
+			
+			
+				
+			
 			var openButton = options.openButton;
 			if (typeof openButton === "undefined") openButton = true;
 			var openSlideNumber = options.openSlideNumber;

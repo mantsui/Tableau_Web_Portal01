@@ -8,7 +8,7 @@ window.onload= function() {
 	var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
 	var options = {
 	    	width: '1280px',
-		height: '7200px',
+		height: '720px',
 		hideToolbar: true,
 		hideTabs: true
 	};

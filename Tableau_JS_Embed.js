@@ -7,8 +7,8 @@ window.onload= function() {
     var placeholder = document.getElementById('myMedicareIP01Viz');
     var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
     var options = {
-    	width: '1200px',
-    	height: '660px',
+    	width: '1280px',
+    	height: '7200px',
     	hideToolbar: true,
     	hideTabs: true
     };
@@ -19,8 +19,8 @@ window.onload= function() {
     var placeholder = document.getElementById('myMedicareOP01Viz');
     var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
     var options = {
-    	width: '1200px',
-    	height: '660px',
+    	width: '1280px',
+    	height: '720px',
     	hideToolbar: true,
     	hideTabs: true
     };
@@ -31,8 +31,8 @@ window.onload= function() {
     var placeholder = document.getElementById('mySacPoliceDispatchViz');
     var vizURL = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
     var options = {
-    	width: '1200px',
-    	height: '660px',
+    	width: '1280px',
+    	height: '720px',
     	hideToolbar: true,
     	hideTabs: true
     };

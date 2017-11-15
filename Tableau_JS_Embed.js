@@ -4,78 +4,92 @@ var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch;
 window.onload= function() {
 // When the webpage has loaded, load the viz
 
-	var placeholder = document.getElementById('myMedicareIP01Viz');
-	var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
-	var options = {
-	    	width: '1280px',
+	var placeholder01 = document.getElementById('myMedicareIP01Viz');
+	var vizURL01 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
+	var options01 = {
+	    width: '1280px',
 		height: '720px',
 		hideToolbar: true,
 		hideTabs: true
 	};
 
-	vizMedicareIP01 = new tableau.Viz(placeholder, vizURL, options);
+	vizMedicareIP01 = new tableau.Viz(placeholder01, vizURL01, options01);
 
-	console.log('Before even listener Activated.'); //Debug code
-	// Listen for mark(s) selection for "Medicare Inpatient Charge Analysis 01"
-	vizMedicareIP01.addEventListener('marksselection', function(marksEvent) {
+	// Listen for filter change/selection for "Medicare Inpatient Charge Analysis 01"
+	vizMedicareIP01.addEventListener('filterchange', function(filterEvent) {
 
-		console.log('Event Listener Activated.'); //Debug code
-	
-		// Tableau Javascript API function to get selected marks 
-		marksEvent.getMarksAsync().then( function(marks){
-			if(marks.length === 0){
-				return;				
-			}
-			
-			// Setup an array to be ready for multiple marks selected
-			var arrayMark = [];
-			
-			// Get "Provider State" mark from the dashboard, one mark at a time
-			for(var i = 0; i < marks.length; i++){
-				var selectedMarkSingle = marks[i].getPairs().get('Provider State').formattedValue;
+		//console.log('Event Listener Activated.'); //Debug code
+
+		var arrayFilterList = [];
+		filterEvent.getFilterAsync().then( function(field){
+			var field_name = field.getFieldName();
+			var field_type = field.getFilterType();
+			if (field_name == "Provider State") {
+				var data_values = field.getAppliedValues();
+				for (i = 0; i < data_values.length; i++) {
+					var selectedFilterSingle = data_values[i].value;
 					
-				// Array manipulation: Concatenate multiple marks into the array
-				arrayMark.push(selectedMarkSingle);
+					// Array manipulation: Concatenate multiple filter values into the array
+					arrayFilterList.push(selectedFilterSingle);
+				}
 			}
-			
-			if(arrayMark.length > 1){
-				var lastMark = arrayMark[arrayMark.length - 1];
-				arrayMark[arrayMark.length - 1] = lastMark;				
-			}
-			
-			console.log(arrayMark);
-			
+			console.log(arrayFilterList);
+
 			// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
 			// with single mark or multiple marks
-			setFilterTo(vizMedicareOP01, 'OP Charge Dashboard', 'Provider State', arrayMark);			
+			setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);			
 		});
 	});
 	
-    var placeholder = document.getElementById('myMedicareOP01Viz');
-    var vizURL = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
-    var options = {
+    var placeholder02 = document.getElementById('myMedicareOP01Viz');
+    var vizURL02 = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
+    var options02 = {
     	width: '1280px',
     	height: '720px',
     	hideToolbar: true,
     	hideTabs: true
     };
 
-	vizMedicareOP01 = new tableau.Viz(placeholder, vizURL, options);
+	vizMedicareOP01 = new tableau.Viz(placeholder02, vizURL02, options02);
 
+	// Listen for filter change/selection for "Medicare Outpatient Charge Analysis 01"
+	vizMedicareOP01.addEventListener('filterchange', function(filterEvent) {
+
+		//console.log('Event Listener Activated.'); //Debug code
+
+		var arrayFilterList = [];
+		filterEvent.getFilterAsync().then( function(field){
+			var field_name = field.getFieldName();
+			var field_type = field.getFilterType();
+			if (field_name == "Provider State") {
+				var data_values = field.getAppliedValues();
+				for (i = 0; i < data_values.length; i++) {
+					var selectedFilterSingle = data_values[i].value;
+					
+					// Array manipulation: Concatenate multiple filter values into the array
+					arrayFilterList.push(selectedFilterSingle);
+				}
+			}
+			console.log(arrayFilterList);
+
+			// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
+			// with single mark or multiple marks
+			setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);			
+		});
+	});
 	
-    var placeholder = document.getElementById('mySacPoliceDispatchViz');
-    var vizURL = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
-    var options = {
+    var placeholder03 = document.getElementById('mySacPoliceDispatchViz');
+    var vizURL03 = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
+    var options03 = {
     	width: '1280px',
     	height: '720px',
     	hideToolbar: true,
     	hideTabs: true
     };
 
-	vizSacPoliceDispatch = new tableau.Viz(placeholder, vizURL, options);
+	vizSacPoliceDispatch = new tableau.Viz(placeholder03, vizURL03, options03);
 
 };
-
 
 
 // Filter the specified dimension to the specified value(s)

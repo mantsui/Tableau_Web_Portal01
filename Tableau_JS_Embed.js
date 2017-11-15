@@ -18,7 +18,7 @@ window.onload= function() {
 	// Listen for mark(s) selection for "Medicare Inpatient Charge Analysis 01"
 	vizMedicareIP01.addEventListener('marksselection', function(marksEvent) {
 
-		// console.log('Event Listener Activated.'); Debug code
+		console.log('Event Listener Activated.'); //Debug code
 	
 		// Tableau Javascript API function to get selected marks 
 		marksEvent.getMarksAsync().then( function(marks){

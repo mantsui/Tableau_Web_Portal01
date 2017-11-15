@@ -15,6 +15,7 @@ window.onload= function() {
 
 	vizMedicareIP01 = new tableau.Viz(placeholder, vizURL, options);
 
+	console.log('Before even listener Activated.'); //Debug code
 	// Listen for mark(s) selection for "Medicare Inpatient Charge Analysis 01"
 	vizMedicareIP01.addEventListener('marksselection', function(marksEvent) {
 

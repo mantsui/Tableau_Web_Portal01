@@ -1,5 +1,5 @@
 // Initialize the viz variable 
-var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPMedicareAvgPayment;
+var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPMedicareAvgPayment, vizOPMedicareAvgPayment;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
@@ -41,14 +41,14 @@ window.onload= function() {
 		});
 	});
 	
-    var placeholder02 = document.getElementById('myMedicareOP01Viz');
-    var vizURL02 = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
-    var options02 = {
-    	width: '1280px',
-    	height: '720px',
-    	hideToolbar: true,
-    	hideTabs: true
-    };
+	var placeholder02 = document.getElementById('myMedicareOP01Viz');
+	var vizURL02 = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
+	var options02 = {
+		width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
 
 	vizMedicareOP01 = new tableau.Viz(placeholder02, vizURL02, options02);
 
@@ -78,26 +78,36 @@ window.onload= function() {
 		});
 	});
 	
-    var placeholder03 = document.getElementById('myIPMedicareAvgPayment');
-    var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/DistributionAnalysisInpatientMedicareAvgPayment';
-    var options03 = {
-    	width: '1280px',
-    	height: '720px',
-    	hideToolbar: true,
-    	hideTabs: true
-    };
+	var placeholder03 = document.getElementById('myIPMedicareAvgPayment');
+	var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/DistributionAnalysisInpatientMedicareAvgPayment';
+	var options03 = {
+		width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
 
 	vizIPMedicareAvgPayment = new tableau.Viz(placeholder03, vizURL03, options03);	
 	
+	var placeholder04 = document.getElementById('myOPMedicareAvgPayment');
+	var vizURL04 = 'https://public.tableau.com/views/MedicareChargeProject_0/DistributionAnalysisOutpatientMedicareAvgPayment';
+	var options04 = {
+		width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
+
+	vizOPMedicareAvgPayment = new tableau.Viz(placeholder04, vizURL04, options04);	
 	
-    var placeholder15 = document.getElementById('mySacPoliceDispatchViz');
-    var vizURL15 = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
-    var options15 = {
-    	width: '1280px',
-    	height: '720px',
-    	hideToolbar: true,
-    	hideTabs: true
-    };
+	var placeholder15 = document.getElementById('mySacPoliceDispatchViz');
+	var vizURL15 = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';
+	var options15 = {
+		width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
 
 	vizSacPoliceDispatch = new tableau.Viz(placeholder15, vizURL15, options15);
 

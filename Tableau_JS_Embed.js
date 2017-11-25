@@ -1,5 +1,5 @@
 // Initialize the viz variable 
-var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPMedicareAvgPayment, vizOPMedicareAvgPayment;
+var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPMedicareAvgPayment, vizOPMedicareAvgPayment, vizIPOP_Pay_Hospital;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
@@ -99,6 +99,17 @@ window.onload= function() {
 	};
 
 	vizOPMedicareAvgPayment = new tableau.Viz(placeholder04, vizURL04, options04);	
+	
+	var placeholder05 = document.getElementById('myIPOP_Pay_Hospital');
+	var vizURL05 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPOPPaymentDashboard';
+	var options05 = {
+		width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
+
+	vizIPOP_Pay_Hospital = new tableau.Viz(placeholder05, vizURL05, options05);	
 	
 	var placeholder15 = document.getElementById('mySacPoliceDispatchViz');
 	var vizURL15 = 'https://public.tableau.com/views/SacPoliceDispatchDashboard/SacramentoPoliceDispatchAnalysis';

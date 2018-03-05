@@ -1,5 +1,5 @@
 // Initialize the viz variable 
-var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPMedicareAvgPayment, vizOPMedicareAvgPayment, vizIPOP_Pay_Hospital;
+var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPOP_Pay_Hospital;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
@@ -77,28 +77,6 @@ window.onload= function() {
 			setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);			
 		});*/
 	});
-	
-	var placeholder03 = document.getElementById('myIPMedicareAvgPayment');
-	var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/DistributionAnalysisInpatientMedicareAvgPayment';
-	var options03 = {
-		width: '1280px',
-		height: '720px',
-		hideToolbar: true,
-		hideTabs: true
-	};
-
-	vizIPMedicareAvgPayment = new tableau.Viz(placeholder03, vizURL03, options03);	
-	
-	var placeholder04 = document.getElementById('myOPMedicareAvgPayment');
-	var vizURL04 = 'https://public.tableau.com/views/MedicareChargeProject_0/DistributionAnalysisOutpatientMedicareAvgPayment';
-	var options04 = {
-		width: '1280px',
-		height: '720px',
-		hideToolbar: true,
-		hideTabs: true
-	};
-
-	vizOPMedicareAvgPayment = new tableau.Viz(placeholder04, vizURL04, options04);	
 	
 	var placeholder05 = document.getElementById('myIPOP_Pay_Hospital');
 	var vizURL05 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPOPPaymentDashboard';

@@ -90,7 +90,7 @@ window.onload= function() {
 	vizIPOP_Pay_Hospital = new tableau.Viz(placeholder05, vizURL05, options05);	
 
 	var placeholder06 = document.getElementById('mySuperStore_D3');
-	var vizURL06 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPOPPaymentDashboard';
+	var vizURL06 = 'https://public.tableau.com/views/SampleDashboardSuperstore/DashboardSuperstoreD3';
 	var options06 = {
 		width: '1280px',
 		height: '720px',

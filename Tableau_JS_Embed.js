@@ -1,19 +1,19 @@
 // Initialize the viz variable 
-var vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPOP_Pay_Hospital, vizSuperStore_D3;
+var vizCMS_Cost_Hosp_Stat, vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatch, vizIPOP_Pay_Hospital, vizSuperStore_D3;
 
 window.onload= function() {
 // When the webpage has loaded, load the viz
 
-	var placeholder01 = document.getElementById('myMedicareIP01Viz');
-	var vizURL01 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
-	var options01 = {
+	var placeholder03 = document.getElementById('myMedicareIP01Viz');
+	var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
+	var options03 = {
 	    width: '1280px',
 		height: '720px',
 		hideToolbar: true,
 		hideTabs: true
 	};
 
-	vizMedicareIP01 = new tableau.Viz(placeholder01, vizURL01, options01);
+	vizMedicareIP01 = new tableau.Viz(placeholder03, vizURL03, options03);
 
 	// Listen for filter change/selection for "Medicare Inpatient Charge Analysis 01"
 	vizMedicareIP01.addEventListener('filterchange', function(filterEvent) {
@@ -41,16 +41,16 @@ window.onload= function() {
 		});*/
 	});
 	
-	var placeholder02 = document.getElementById('myMedicareOP01Viz');
-	var vizURL02 = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
-	var options02 = {
+	var placeholder04 = document.getElementById('myMedicareOP01Viz');
+	var vizURL04 = 'https://public.tableau.com/views/MedicareChargeProject_0/OPChargeDashboard';
+	var options04 = {
 		width: '1280px',
 		height: '720px',
 		hideToolbar: true,
 		hideTabs: true
 	};
 
-	vizMedicareOP01 = new tableau.Viz(placeholder02, vizURL02, options02);
+	vizMedicareOP01 = new tableau.Viz(placeholder04, vizURL04, options04);
 
 	// Listen for filter change/selection for "Medicare Outpatient Charge Analysis 01"
 	vizMedicareOP01.addEventListener('filterchange', function(filterEvent) {

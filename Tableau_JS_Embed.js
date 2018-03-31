@@ -4,6 +4,17 @@ var vizCMS_Cost_Hosp_Stat, vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatc
 window.onload= function() {
 // When the webpage has loaded, load the viz
 
+	var placeholder01 = document.getElementById('myMedicareIP01Viz');
+	var vizURL01 = 'https://public.tableau.com/views/MedicareCostRptProject/HospStatDashboard';
+	var options01 = {
+	    width: '1280px',
+		height: '720px',
+		hideToolbar: true,
+		hideTabs: true
+	};
+
+	vizCMS_Cost_Hosp_Stat = new tableau.Viz(placeholder01, vizURL01, options01);
+	
 	var placeholder03 = document.getElementById('myMedicareIP01Viz');
 	var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';
 	var options03 = {

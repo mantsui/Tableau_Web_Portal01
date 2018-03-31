@@ -4,7 +4,7 @@ var vizCMS_Cost_Hosp_Stat, vizMedicareIP01, vizMedicareOP01, vizSacPoliceDispatc
 window.onload= function() {
 // When the webpage has loaded, load the viz
 
-	var placeholder01 = document.getElementById('myMedicareIP01Viz');
+	var placeholder01 = document.getElementById('myCMS_Cost_Hosp_Stat_Viz');
 	var vizURL01 = 'https://public.tableau.com/views/MedicareCostRptProject/HospStatDashboard';
 	var options01 = {
 	    width: '1280px',

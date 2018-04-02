@@ -14,6 +14,34 @@ window.onload= function() {
 	};
 
 	vizCMS_Cost_Hosp_Stat = new tableau.Viz(placeholder01, vizURL01, options01);
+
+	// Listen for filter change/selection for "Medicare Inpatient Charge Analysis 01"
+	vizCMS_Cost_Hosp_Stat.addEventListener('filterchange', function(filterEvent) {
+
+		//console.log('Event Listener Activated.'); //Debug code
+
+		var arrayFilterList = [];
+		filterEvent.getFilterAsync().then( function(field){
+			var field_name = field.getFieldName();
+			var field_type = field.getFilterType();
+			if (field_name == "State") {
+				var data_values = field.getAppliedValues();
+				for (i = 0; i < data_values.length; i++) {
+					var selectedFilterSingle = data_values[i].value;
+					
+					// Array manipulation: Concatenate multiple filter values into the array
+					arrayFilterList.push(selectedFilterSingle);
+				}
+				
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
+				setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
+				setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);
+			}
+			console.log(arrayFilterList);
+		});
+	});
+	
 	
 	var placeholder03 = document.getElementById('myMedicareIP01Viz');
 	var vizURL03 = 'https://public.tableau.com/views/MedicareChargeProject_0/IPChargeDashboard';

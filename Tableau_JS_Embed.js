@@ -31,7 +31,7 @@ window.onload= function() {
 
 		//console.log('Event Listener Activated.'); //Debug code
 
-		/*var arrayFilterList = [];
+		var arrayFilterList = [];
 		filterEvent.getFilterAsync().then( function(field){
 			var field_name = field.getFieldName();
 			var field_type = field.getFilterType();
@@ -43,13 +43,13 @@ window.onload= function() {
 					// Array manipulation: Concatenate multiple filter values into the array
 					arrayFilterList.push(selectedFilterSingle);
 				}
+				
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
+				// with single mark or multiple marks
+				setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);				
 			}
 			console.log(arrayFilterList);
-
-			// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
-			// with single mark or multiple marks
-			setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);			
-		});*/
+		});
 	});
 	
 	var placeholder04 = document.getElementById('myMedicareOP01Viz');
@@ -68,7 +68,7 @@ window.onload= function() {
 
 		//console.log('Event Listener Activated.'); //Debug code
 
-		/*var arrayFilterList = [];
+		var arrayFilterList = [];
 		filterEvent.getFilterAsync().then( function(field){
 			var field_name = field.getFieldName();
 			var field_type = field.getFilterType();
@@ -80,13 +80,14 @@ window.onload= function() {
 					// Array manipulation: Concatenate multiple filter values into the array
 					arrayFilterList.push(selectedFilterSingle);
 				}
+				
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
+				// with single mark or multiple marks
+				setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);
 			}
 			console.log(arrayFilterList);
 
-			// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
-			// with single mark or multiple marks
-			setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);			
-		});*/
+		});
 	});
 	
 	var placeholder05 = document.getElementById('myIPOP_Pay_Hospital');

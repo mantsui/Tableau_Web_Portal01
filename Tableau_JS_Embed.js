@@ -72,9 +72,11 @@ window.onload= function() {
 					arrayFilterList.push(selectedFilterSingle);
 				}
 				
-				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
+				// Cross-filter: Apply "State" filter criteria to "Medicare Cost Report: Hospital Statistics"
 				// with single mark or multiple marks
-				setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);				
+				setFilterTo(vizCMS_Cost_Hosp_Stat, 'Hosp Stat Map', 'State', arrayFilterList);
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Outpatient Charge Analysis 01"
+				setFilterTo(vizMedicareOP01, 'OP Map', 'Provider State', arrayFilterList);
 			}
 			console.log(arrayFilterList);
 		});
@@ -108,9 +110,11 @@ window.onload= function() {
 					// Array manipulation: Concatenate multiple filter values into the array
 					arrayFilterList.push(selectedFilterSingle);
 				}
-				
-				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
+
+				// Cross-filter: Apply "State" filter criteria to "Medicare Cost Report: Hospital Statistics"
 				// with single mark or multiple marks
+				setFilterTo(vizCMS_Cost_Hosp_Stat, 'Hosp Stat Map', 'State', arrayFilterList);
+				// Cross-filter: Apply "Provider State" filter criteria to "Medicare Inpatient Charge Analysis 01"
 				setFilterTo(vizMedicareIP01, 'IP Map', 'Provider State', arrayFilterList);
 			}
 			console.log(arrayFilterList);

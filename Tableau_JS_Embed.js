@@ -15,7 +15,7 @@ window.onload= function() {
 
 	vizCMS_Cost_Hosp_Stat = new tableau.Viz(placeholder01, vizURL01, options01);
 
-	// Listen for filter change/selection for "Medicare Inpatient Charge Analysis 01"
+	// Listen for filter change/selection for "Medicare Cost Report Hospital Statistics"
 	vizCMS_Cost_Hosp_Stat.addEventListener('filterchange', function(filterEvent) {
 
 		//console.log('Event Listener Activated.'); //Debug code
